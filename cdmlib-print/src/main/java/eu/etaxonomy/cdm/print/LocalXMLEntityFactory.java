@@ -12,6 +12,7 @@ package eu.etaxonomy.cdm.print;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -409,7 +410,7 @@ public class LocalXMLEntityFactory extends XmlEntityFactoryBase {
         File tmpFile = null;
         try {
             Document document = new Document();
-            tmpFile = File.createTempFile("printpublisher", null);
+            tmpFile = Files.createTempFile("printpublisher", null).toFile();
 
             PrintWriter writer = new PrintWriter(tmpFile, "UTF-8");
 
